@@ -29,5 +29,13 @@ class CashbackHackServiceTest {
 
         assertEquals(expected, actual);
     }
+    @Test
+    void shouldExceptionIfAmountIsNegativ() {
+
+        CashbackHackService cashbackHackService = new CashbackHackService();
+        int amount = -1;
+
+        assertThrows(IllegalArgumentException.class, () -> cashbackHackService.remain(amount));
+    }
 
 }
